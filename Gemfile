@@ -30,6 +30,7 @@ gem 'ransack', '~> 2.3.0'
 gem 'rubocop'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -42,7 +43,6 @@ end
 
 group :test do
   gem 'factory_bot_rails', '~> 5.0.2'
-  gem 'rspec-rails', '~> 3.8'
   gem 'simplecov', '~> 0.17.1'
 end
 
