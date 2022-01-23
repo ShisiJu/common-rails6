@@ -4,12 +4,12 @@ class ApiTokenStrategy < Warden::Strategies::Base
   end
 
   def authenticate!
-    user = Account.find_by(api_token: api_token)
+    user = User.find_by(api_token: api_token)
 
     if user
       success!(user)
     else
-      fail!('Invalid email or password')
+      fail!('Invalid username or password')
     end
   end
 

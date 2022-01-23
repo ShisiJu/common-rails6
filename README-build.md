@@ -59,10 +59,16 @@ rails credentials:edit
 rails generate rspec:install
 ```
 
+## device
+
+```sh
+rails generate devise User
+```
 
 ## 启动
 
 ```sh
 # http://127.0.0.1:3000
 rails s -p 3000
+ rails s -u webrick
 ```

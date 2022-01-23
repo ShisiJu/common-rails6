@@ -1,5 +1,12 @@
 class User < ApplicationRecord
-  def self.authenticate(username, password)
-    User.find_by(username: username, password: password)
-  end
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+
+  def reset_api_token!
+    self.api_token = SecureRandom.hex
+    self.save!
+  end         
 end

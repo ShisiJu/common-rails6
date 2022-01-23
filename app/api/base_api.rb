@@ -4,8 +4,10 @@ class BaseAPI < Grape::API
   format :json
   prefix :api
 
+  # https://github.com/heartcombo/devise/tree/main/lib/devise/controllers
   helpers Devise::Controllers::SignInOut
-  helpers ::Helpers::UserHelper
+  helpers Devise::Controllers::Helpers
+  helpers ::Helpers::LoginHelper
   helpers ::Helpers::ResponseHelper
 
   rescue_from :all do |e|

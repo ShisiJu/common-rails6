@@ -8,13 +8,14 @@ module V1
         requires :password, type: String, desc: 'password'
       end
       post do
-        account = Account.find_by(username: params[:username])
-        if account&.valid_password?(params[:password])
-          byebug
-          sign_in(account)
-          { account_id: account.id }
+        user = User.find_by(username: params[:username])
+        
+        if user&.valid_password?(params[:password])
+          sign_in(user)
+          user.reset_api_token!
+          { user_id: user.id, api_token: user.api_token }
         else
-          error!('Invalid email/password combination', 401)
+          response(message: 'Invalid username/password combination', data: false)
         end
       end
     end
