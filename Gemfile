@@ -1,12 +1,12 @@
 source 'https://gems.ruby-china.com'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # pg
-gem 'pg', '~> 1.1.4'
+gem 'pg', '~> 1.3.0.rc4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -28,7 +28,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # 筛选
 gem 'ransack', '~> 2.3.0'
 gem 'rubocop'
-
+# route 
+gem 'grape'
 group :development, :test do
   gem 'rspec-rails', '~> 5.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,3 +49,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#  Please add the following to your Gemfile to avoid polling for changes:
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

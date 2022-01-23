@@ -1,21 +1,21 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: sample_postgres_development
+  database: sample_development
   pool: 5
-  username: sample_postgres
-  password:
+  username: sample
+  password: sample
 test:
   adapter: postgresql
   encoding: unicode
-  database: sample_postgres_test
+  database: sample_test
   pool: 5
-  username: sample_postgres
-  password:
+  username: sample
+  password: sample
 production:
   adapter: postgresql
   encoding: unicode
-  database: sample_postgres_production
+  database: sample_production
   pool: 5
-  username: sample_postgres
-  password:
+  username: sample
+  password: sample
